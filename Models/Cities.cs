@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace AirQualityMVC.Models
+{
+    public class Cities
+    {
+        [DisplayName("code")]
+        public string Name { get; set; }
+        public string Country { get; set }
+        public int Count { get; set; }
+        public int Locations { get; set; }
+
+    }
+}
