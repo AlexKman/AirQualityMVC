@@ -8,7 +8,7 @@ namespace AirQualityMVC.Controllers
 {
     public class OpenAQAPI : Controller
     {
-        public ActionResult Home()
+        public ActionResult Countries()
         {
             return View();
         }
