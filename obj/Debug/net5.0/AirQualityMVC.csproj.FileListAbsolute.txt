@@ -23,12 +23,6 @@ C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\scopedcss\bundle\Air
 C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\AirQualityMVC.TagHelpers.input.cache
 C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\AirQualityMVC.TagHelpers.output.cache
 C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\AirQualityMVC.RazorCoreGenerate.cache
-C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
-C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
-C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
-C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\AirQualityMVC.RazorTargetAssemblyInfo.cache
 C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\AirQualityMVC.RazorTargetAssemblyInfo.cs
 C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\AirQualityMVC.Views.pdb
@@ -37,3 +31,10 @@ C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\ref\AirQualityMVC.dl
 C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\AirQualityMVC.pdb
 C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\AirQualityMVC.genruntimeconfig.cache
 C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\AirQualityMVC.csproj.CopyComplete
+C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\Razor\OpenAQAPI\Home\Countries.cshtml.g.cs
+C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\Razor\OpenAQAPI\Index.cshtml.g.cs
+C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\Razor\OpenAQAPI\Shared\Error.cshtml.g.cs
+C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\Razor\OpenAQAPI\Shared\_Layout.cshtml.g.cs
+C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\Razor\OpenAQAPI\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\Razor\OpenAQAPI\_ViewImports.cshtml.g.cs
+C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\Razor\OpenAQAPI\_ViewStart.cshtml.g.cs

@@ -8,9 +8,9 @@ namespace AirQualityMVC.Models
 {
     public class Cities
     {
-        [DisplayName("code")]
+        [DisplayName("Code")]
         public string Name { get; set; }
-        public string Country { get; set }
+        public string Country { get; set; }
         public int Count { get; set; }
         public int Locations { get; set; }
 
