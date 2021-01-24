@@ -50,7 +50,7 @@ namespace AirQualityMVC
             {
                 endpoints.MapControllerRoute(
                     name: "Home",
-                    pattern: "{controller=OpenAQAPI}/{action=Countries}");
+                    pattern: "{controller=OpenAQAPI}/{action=Countries}/{id?}");
 
             });
         }
