@@ -7,8 +7,11 @@ using System.ComponentModel;
 namespace AirQualityMVC.Models
 {
     public class CitiesAirQuality
+
     {
+        public string Country { get; set; }
         public string Name { get; set; }
         public int Count { get; set; }
+
     }
 }

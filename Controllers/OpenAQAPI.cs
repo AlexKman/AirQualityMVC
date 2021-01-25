@@ -62,7 +62,7 @@ namespace AirQualityMVC.Controllers
 
             return countries;
         }
-        public ActionResult Cities(string Name)
+        public ActionResult Cities(string Code)
         {
 
             IEnumerable<CitiesAirQuality> Cities = null;
@@ -71,7 +71,7 @@ namespace AirQualityMVC.Controllers
             {
                 client.BaseAddress = new Uri("https://api.openaq.org/v1/");
 
-                var response = client.GetAsync("cities?country=" + Name);
+                var response = client.GetAsync("cities?country=" + Code);
 
                 response.Wait();
 
