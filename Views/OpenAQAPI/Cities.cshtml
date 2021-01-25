@@ -5,7 +5,7 @@
 
 <div class="container">
     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-        
+
         <thead>
             <tr class="table-headers">
                 <th>
@@ -14,47 +14,74 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Count)
                 </th>
+             <th></th>
             </tr>
         </thead>
-            <tbody>
-                @foreach (var Item in Model)
-                {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => Item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => Item.Count)
-        </td>
-    </tr>}
-            </tbody>
-        </table>
-    </div>
+        <tbody>
+            @foreach (var Item in Model)
+            {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => Item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => Item.Count)
+    </td>
+    <td>
+        three
+    </td>
+    
+</tr>
+}
+        </tbody>
+    </table>
+</div>
 
 
-        <style>
-            .table {
-                background-color: white;
-                padding: 20em;
-            }
+<style>
+    .table {
+        background-color: white;
+        padding: 20em;
+    }
 
-            .container {
-            }
+    .container {
+    }
 
-            .table-headers > th {
-                cursor: pointer;
-            }
-        </style>
+    .table-headers > th {
+        cursor: pointer;
+    }
+    .selectButton {
+        display: inline-block;
+        margin-bottom: 0;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        background-image: none;
+        border: 1px solid transparent;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        border-radius: 4px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+</style>
 
-        @section Scripts{
+@section Scripts{
 
-            @*<script src="~/js/" data-rel-js></script>*@
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-            <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
-            <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
-            <script>
-                $(document).ready(function () {
-                    $('#dataTable').DataTable();
-                });
-            </script>
-        }
+    @*<script src="~/js/" data-rel-js></script>*@
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTable').DataTable();
+        });
+    </script>
+}

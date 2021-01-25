@@ -36,18 +36,14 @@ namespace AirQualityMVC.Controllers
 
                     Countries = removeWhereBlank(task.Result.Results);
                 }
-                else // If retrieval is unsuccessful display server error
+                else // If retrieval is unsuccessful display empty list
                 {
                     Countries = new List<CountryAirQuality>();
-                    ModelState.AddModelError(string.Empty, "Server Error");
-
-
 
                 }
             }
             return View(Countries);
         }
-
         //Removes countries where blank to avoid null reference errors
         public List<CountryAirQuality> removeWhereBlank(List<CountryAirQuality> airQualityCountries)
         {
@@ -91,6 +87,7 @@ namespace AirQualityMVC.Controllers
             }
             return View(Cities);
         }
+        //Removes cities where blank to avoid null reference errors
         public List<CitiesAirQuality> removeWhereBlankCity(List<CitiesAirQuality> newCities)
         {
             List<CitiesAirQuality> cities = new List<CitiesAirQuality>();
