@@ -11,7 +11,9 @@ namespace AirQualityMVC.Models
         [DisplayName("Code")]
         public string Code { get; set; }
         public string Name { get; set; }
+        [DisplayName("Number of Cities")]
         public int Cities { get; set; }
+        [DisplayName("Number of Measurements")]
         public int Count { get; set; }
         public int Locations { get; set; }
     }

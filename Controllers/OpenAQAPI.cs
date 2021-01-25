@@ -26,6 +26,8 @@ namespace AirQualityMVC.Controllers
 
                 var result = response.Result;
 
+
+                // Tests for successful response from API
                 if (result.IsSuccessStatusCode)
                 {
                     var task = result.Content.ReadAsAsync<ApiResponse<CountryAirQuality>>();
@@ -34,7 +36,7 @@ namespace AirQualityMVC.Controllers
 
                     Countries = removeWhereBlank(task.Result.Results);
                 }
-                else
+                else // If retrieval is unsuccessful display server error
                 {
                     Countries = new List<CountryAirQuality>();
                     ModelState.AddModelError(string.Empty, "Server Error");
