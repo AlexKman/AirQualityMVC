@@ -101,5 +101,6 @@ namespace AirQualityMVC.Controllers
 
             return cities;
         }
+
     }
 }
