@@ -1,0 +1,31 @@
+﻿@model IEnumerable<AirQualityMVC.Models.CitiesAirQuality>
+
+@{ ViewData["Title"] = "Cities"; }
+
+<h1>Index</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>2</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.ActionLink("View Results", "MeasurmentByCity", new { code = item.Name })
+    </td>
+</tr>}
+    </tbody>
+</table>
+
+<style>
+</style>

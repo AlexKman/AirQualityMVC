@@ -62,5 +62,47 @@ namespace AirQualityMVC.Controllers
 
             return countries;
         }
+        public ActionResult Cities(string Name)
+        {
+
+            IEnumerable<CitiesAirQuality> Cities = null;
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://api.openaq.org/v1/");
+
+                var response = client.GetAsync("cities?country=" + Name);
+
+                response.Wait();
+
+                var result = response.Result;
+                if (result.IsSuccessStatusCode)
+                {
+                    var readTask = result.Content.ReadAsAsync<ApiResponse<CitiesAirQuality>>();
+                    readTask.Wait();
+
+                    Cities = removeWhereBlankCity(readTask.Result.Results);
+                }
+                else
+                {
+                    Cities = Enumerable.Empty<CitiesAirQuality>();
+                    ModelState.AddModelError(string.Empty, "Server Error: Please try again later");
+                }
+            }
+            return View(Cities);
+        }
+        public List<CitiesAirQuality> removeWhereBlankCity(List<CitiesAirQuality> newCities)
+        {
+            List<CitiesAirQuality> cities = new List<CitiesAirQuality>();
+            foreach (var item in newCities)
+            {
+                if (item.Name != null && item.Name != "unused")
+                {
+                    cities.Add(item);
+                }
+            }
+
+            return cities;
+        }
     }
 }
