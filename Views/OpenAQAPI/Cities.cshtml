@@ -28,9 +28,8 @@
         @Html.DisplayFor(modelItem => Item.Count)
     </td>
     <td>
-        three
+        @Html.ActionLink("View Latest Measurements", "CityMeasurements", new { code = Item.Name })
     </td>
-    
 </tr>
 }
         </tbody>

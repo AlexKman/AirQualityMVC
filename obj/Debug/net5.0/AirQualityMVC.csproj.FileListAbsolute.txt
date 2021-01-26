@@ -41,3 +41,4 @@ C:\Users\Alex K\source\repos\AirQualityMVC\bin\Debug\net5.0\System.Net.Http.Form
 C:\Users\Alex K\source\repos\AirQualityMVC\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\Alex K\source\repos\AirQualityMVC\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
 C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\Razor\Views\OpenAQAPI\Cities.cshtml.g.cs
+C:\Users\Alex K\source\repos\AirQualityMVC\obj\Debug\net5.0\Razor\Views\OpenAQAPI\CityMeasurements.cshtml.g.cs

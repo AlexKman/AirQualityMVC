@@ -9,9 +9,11 @@ using AirQualityMVC.Misc;
 
 namespace AirQualityMVC.Controllers
 {
+    [Route("[controller]/[action]")]
     public class OpenAQAPI : Controller
     {
         // Provides list of countries from the API
+        [Route("/")]
         public ActionResult Countries()
         {
 
@@ -58,6 +60,7 @@ namespace AirQualityMVC.Controllers
 
             return countries;
         }
+        [Route("(C  ode)")]
         public ActionResult Cities(string Code)
         {
 
@@ -82,7 +85,6 @@ namespace AirQualityMVC.Controllers
                 else
                 {
                     Cities = Enumerable.Empty<CitiesAirQuality>();
-                    ModelState.AddModelError(string.Empty, "Server Error: Please try again later");
                 }
             }
             return View(Cities);
@@ -101,6 +103,35 @@ namespace AirQualityMVC.Controllers
 
             return cities;
         }
+        // Displays air quality measurements from specific City
+        //[Route("[action]/(City)")]
+        public ActionResult CityMeasurements(string Code)
+        {
+            IEnumerable<CityMeasurementResults> value = null;
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://api.openaq.org/v1/");
 
+                //Adds  only the latest measurements as the API contains 10's of thousands of  results for  some cities
+                var response = client.GetAsync("latest?city=" + Code);
+
+                response.Wait();
+
+                var result = response.Result;
+
+                if (result.IsSuccessStatusCode)
+                {
+                    var task = result.Content.ReadAsAsync<ApiResponse<CityMeasurementResults>>();
+
+                    task.Wait();
+                    value = task.Result.Results;
+                }
+                else
+                {
+                    value = Enumerable.Empty<CityMeasurementResults>();
+                }
+            }
+            return View(value);
+        }
     }
 }
