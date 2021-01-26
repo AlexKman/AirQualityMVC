@@ -39,31 +39,16 @@ namespace AirQualityMVC.Controllers
 
                     task.Wait();
 
-                    Countries = removeWhereBlank(task.Result.Results);
+                    Countries = removeCountryWhereBlank(task.Result.Results);
                 }
                 else // If retrieval is unsuccessful display empty list
                 {
                     Countries = new List<CountryAirQuality>();
-
                 }
             }
             return View(Countries);
         }
-        //Removes countries where blank to avoid null reference errors
-        public List<CountryAirQuality> removeWhereBlank(List<CountryAirQuality> airQualityCountries)
-        {
-            List<CountryAirQuality> countries = new List<CountryAirQuality>();
-            foreach (var item in airQualityCountries)
-            {
-                if (item.Name != null && item.Name != "")
-                {
-                    countries.Add(item);
-                }
-            }
-
-            return countries;
-        }
-
+        // Provides list of cities from the API for specific country
         public ActionResult Cities(string Code)
         {
 
@@ -92,20 +77,7 @@ namespace AirQualityMVC.Controllers
             }
             return View(Cities);
         }
-        //Removes cities where blank to avoid null reference errors
-        public List<CitiesAirQuality> removeWhereBlankCity(List<CitiesAirQuality> newCities)
-        {
-            List<CitiesAirQuality> cities = new List<CitiesAirQuality>();
-            foreach (var item in newCities)
-            {
-                if (item.Name != null && item.Name != "unused")
-                {
-                    cities.Add(item);
-                }
-            }
 
-            return cities;
-        }
         // Displays air quality measurements from specific City
         public ActionResult CityMeasurements(string Code)
         {
@@ -134,6 +106,33 @@ namespace AirQualityMVC.Controllers
                 }
             }
             return View(value);
+        }
+
+        //Removes countries where blank to avoid null reference errors
+        public List<CountryAirQuality> removeCountryWhereBlank(List<CountryAirQuality> airQualityCountries)
+        {
+            List<CountryAirQuality> countries = new List<CountryAirQuality>();
+            foreach (var item in airQualityCountries)
+            {
+                if (item.Name != null && item.Name != "")
+                {
+                    countries.Add(item);
+                }
+            }
+            return countries;
+        }
+        //Removes cities where blank to avoid null reference errors
+        public List<CitiesAirQuality> removeWhereBlankCity(List<CitiesAirQuality> newCities)
+        {
+            List<CitiesAirQuality> cities = new List<CitiesAirQuality>();
+            foreach (var item in newCities)
+            {
+                if (item.Name != null && item.Name != "unused")
+                {
+                    cities.Add(item);
+                }
+            }
+            return cities;
         }
     }
 }
