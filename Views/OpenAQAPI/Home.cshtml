@@ -1,11 +1,27 @@
 ﻿@{ ViewData["Title"] = "Home Page"; }
 
-<div class="flex-column text-center">
-    <h1>
-        2
-    </h1>
-    <h2>Egg</h2>
-    <div class="text-center" >
-        <button onclick="location.href='@Url.Action("Countries", "OpenAQAPI")'" type="button" class="btn btn-secondary" style="" >View all countries</button>
-    </div>
+
+
+<div style="display:flex;flex-direction:column;text-align:center;font-size:1.4em;">
+    <p>
+        This application is using the Air Quality Open API - https://docs.openaq.org/#api-_ to retrieve and display data.
+    </p>
+    <br />
+    <p>
+        This application is utilizing the MVC framework with views on the front end. Currently the data is displayed within tables and the sorting is possible through the front end of the application
+        because of the speed and low reliability of the API.
+    </p>
+    <br />
+    <p >You are able to view a list of countries with Air Quality measurement count and number of cities tested <a style="color:blue;" class="countriesLink" onclick="location.href='@Url.Action("Countries", "OpenAQAPI")'">here.</a></p>
 </div>
+
+<style>
+    .countriesLink{
+        color:blue;
+    }
+    .countriesLink:hover{
+        text-decoration:underline;
+        color:white;
+        cursor:pointer;
+    }
+</style>
