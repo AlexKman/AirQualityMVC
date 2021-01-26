@@ -48,14 +48,14 @@ namespace AirQualityMVC
 
             app.UseEndpoints(endpoints =>
             {
-                //endpoints.MapControllerRoute(
-                //    // Home page displays table of all countries
-                //    name: "Home",
-                //    pattern: "{controller=OpenAQAPI}/{action=Countries}/{id?}");
-                //// Corresponding Page to display the relative cities from the country
-                //endpoints.MapControllerRoute(name: "Cities",
-                //pattern: "{controller=OpenAQAPI}/{action=Cities}/{id?}");
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                      //    // Home page displays table of all countries
+                      name: "Home",
+                      pattern: "{controller=OpenAQAPI}/{action=Home}/{id?}");
+                // Corresponding Page to display the relative cities from the country
+                endpoints.MapControllerRoute(name: "Countries",
+                pattern: "{controller=Countries}/{action=Index}/{id?}");
+
             });
         }
     }

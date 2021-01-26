@@ -10,7 +10,9 @@ namespace AirQualityMVC.Models
 
     {
         public string Country { get; set; }
+        
         public string Name { get; set; }
+        [DisplayName("Number of Measurements")]
         public int Count { get; set; }
 
     }

@@ -9,11 +9,14 @@ using AirQualityMVC.Misc;
 
 namespace AirQualityMVC.Controllers
 {
-    [Route("[controller]/[action]")]
     public class OpenAQAPI : Controller
     {
+        public ActionResult Home()
+        {
+            return View();
+        }
         // Provides list of countries from the API
-        [Route("/")]
+
         public ActionResult Countries()
         {
 
@@ -60,7 +63,7 @@ namespace AirQualityMVC.Controllers
 
             return countries;
         }
-        [Route("(C  ode)")]
+
         public ActionResult Cities(string Code)
         {
 
@@ -104,7 +107,6 @@ namespace AirQualityMVC.Controllers
             return cities;
         }
         // Displays air quality measurements from specific City
-        //[Route("[action]/(City)")]
         public ActionResult CityMeasurements(string Code)
         {
             IEnumerable<CityMeasurementResults> value = null;
