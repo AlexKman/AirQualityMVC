@@ -10,3 +10,6 @@ Countries page **complete**
 Cities page **complete**
 
 Measurements page **Not complete**
+
+
+My main issue with this task has been the speed and reliability of the API used. Sorting and limits do not seem to register through the web browser or by creating calls through postman.
