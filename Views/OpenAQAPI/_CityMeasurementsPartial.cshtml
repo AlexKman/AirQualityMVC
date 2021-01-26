@@ -1,0 +1,46 @@
+﻿@model IEnumerable<AirQualityMVC.Models.CityMeasurements>
+@*Partial view to display the chemical parameters and corresponding values each location. Used within CityMeasurements.cshtml*@
+
+<div class="container">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr class="table-headers">
+                <th>
+                    Chemical Name:
+                </th>
+                <th>
+                    Chemical Value:
+                </th>
+                </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Parameter)
+    </td>
+    <td>
+        @{ var result = item.Value + " " + item.Unit; @Html.DisplayFor(modelItem => result) }
+    </td>
+</tr>
+}
+        </tbody>
+    </table>
+</div>
+
+
+<style>
+    .table {
+        background-color: white;
+        padding: 20em;
+    }
+
+    .container {
+    }
+
+    .table-headers > th {
+        cursor: pointer;
+    }
+</style>
+
