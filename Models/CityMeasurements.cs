@@ -15,7 +15,7 @@ namespace AirQualityMVC.Models
     }
     public class CityMeasurementResults
     {
-        public List<CityMeasurements> measurements { get; set; }
+        public List<CityMeasurements> Measurements { get; set; }
         public string Location { get; set; }
         public string City { get; set; }
     

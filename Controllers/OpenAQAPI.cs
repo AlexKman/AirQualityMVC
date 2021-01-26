@@ -39,7 +39,7 @@ namespace AirQualityMVC.Controllers
 
                     task.Wait();
 
-                    Countries = removeCountryWhereBlank(task.Result.Results);
+                    Countries = RemoveCountryWhereBlank(task.Result.Results);
                 }
                 else // If retrieval is unsuccessful display empty list
                 {
@@ -68,7 +68,7 @@ namespace AirQualityMVC.Controllers
                     var readTask = result.Content.ReadAsAsync<ApiResponse<CitiesAirQuality>>();
                     readTask.Wait();
 
-                    Cities = removeWhereBlankCity(readTask.Result.Results);
+                    Cities = RemoveCityWhereBlank(readTask.Result.Results);
                 }
                 else
                 {
@@ -109,7 +109,7 @@ namespace AirQualityMVC.Controllers
         }
 
         //Removes countries where blank to avoid null reference errors
-        public List<CountryAirQuality> removeCountryWhereBlank(List<CountryAirQuality> airQualityCountries)
+        public List<CountryAirQuality> RemoveCountryWhereBlank(List<CountryAirQuality> airQualityCountries)
         {
             List<CountryAirQuality> countries = new List<CountryAirQuality>();
             foreach (var item in airQualityCountries)
@@ -122,7 +122,7 @@ namespace AirQualityMVC.Controllers
             return countries;
         }
         //Removes cities where blank to avoid null reference errors
-        public List<CitiesAirQuality> removeWhereBlankCity(List<CitiesAirQuality> newCities)
+        public List<CitiesAirQuality> RemoveCityWhereBlank(List<CitiesAirQuality> newCities)
         {
             List<CitiesAirQuality> cities = new List<CitiesAirQuality>();
             foreach (var item in newCities)
